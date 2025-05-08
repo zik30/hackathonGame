@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Game from "./pages/Game";
+import Game from "./pages/gamePage/Game";
 
 function App() {
   return (
@@ -11,7 +11,6 @@ function App() {
         </nav>
         <Routes>
           <Route path="/game" element={<Game />} />
-          {/* другие маршруты */}
         </Routes>
       </BrowserRouter>
     </>
