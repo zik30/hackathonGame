@@ -122,7 +122,7 @@ const RegistrationModal = ({ modal,onClose}) => {
 
 
 
-    return(
+    return modal ? (
         <div className={style.modalOverlay}>
             <div className={style.modal}>
                 <button className={style.closeButton} onClick={onClose}>
@@ -175,7 +175,7 @@ const RegistrationModal = ({ modal,onClose}) => {
                         </div>
                     </form>
             </div>
-        </div>)
+        </div>) : null
     ;
 };
 export default RegistrationModal;

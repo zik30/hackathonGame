@@ -42,6 +42,7 @@
   }
 
   .closeButton {
+    padding: 0;
     position: absolute;
     top: 12px;
     right: 12px;
@@ -51,6 +52,7 @@
     transition: transform 0.2s ease;
     width: 48px;
     height: 48px;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -97,7 +99,7 @@
 
 .input {
   background: #d9d9d9;
-  width: 500px;
+
   height: 56px;
   padding: 19px;
   border-radius: 10px;
