@@ -1,12 +1,11 @@
 export function characterSelection(k) {
-  // Добавляем черный фон
+ 
   k.add([
     k.rect(k.width(), k.height()),
     k.pos(0, 0),
-    k.color(0, 0, 0),
+    k.color(0, 0, 20),
   ]);
 
-  // Заголовок
   k.add([
     k.text("Выберите персонажа", { size: 24 }),
     k.pos(k.width() / 2, 50),
@@ -46,8 +45,7 @@ export function characterSelection(k) {
     });
   });
 
-  // Игнорируем нажатие клавиш в этой сцене
+  
   k.onKeyPress("up", () => {
-    // Ничего не делаем
   });
 }

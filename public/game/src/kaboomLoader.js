@@ -70,50 +70,6 @@ k.loadSprite("burner", "./assets/sprites/burn3r.png", {
   },
 });
 
-k.loadSprite("newCharacter", "./assets/sprites/character_sheet_32x32.png", {
-  sliceX: 5, // Adjust based on the number of horizontal frames
-  sliceY: 4, // Adjust based on the number of vertical frames
-  anims: {
-    idle: { from: 0, to: 3, loop: true },
-    run: { from: 5, to: 9, loop: true },
-    jump: { from: 10, to: 10 },
-    fall: { from: 11, to: 11 },
-    attack: { from: 15, to: 19, speed: 10 },
-  },
-});
-
-// k.loadSprite("character1", "./assets/sprites/u.png", {
-//   sliceX: 6,
-//   sliceY: 4,
-//   anims: {
-//     idle: { from: 0, to: 3, loop: true },
-//     run: { from: 6, to: 11, loop: true },
-//     jump: { from: 12, to: 12 },
-//     attack: { from: 18, to: 23, loop: true },
-//   },
-// });
-
-// k.loadSprite("character2", "./assets/sprites/u2.png", {
-//   sliceX: 6,
-//   sliceY: 4,
-//   anims: {
-//     idle: { from: 0, to: 3, loop: true },
-//     run: { from: 6, to: 11, loop: true },
-//     jump: { from: 12, to: 12 },
-//     attack: { from: 18, to: 23, loop: true },
-//   },
-// });
-
-// k.loadSprite("character3", "./assets/sprites/u3.png", {
-//   sliceX: 6,
-//   sliceY: 4,
-//   anims: {
-//     idle: { from: 0, to: 3, loop: true },
-//     run: { from: 6, to: 11, loop: true },
-//     jump: { from: 12, to: 12 },
-//     attack: { from: 18, to: 23, loop: true },
-//   },
-// });
 
 k.loadSpriteAtlas("./assets/ui.png", {
   healthBar: {

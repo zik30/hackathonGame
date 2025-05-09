@@ -46,7 +46,6 @@ k.scene("intro", () => {
 k.scene("characterSelection", () => characterSelection(k));
 k.scene("room1", (ctx) => room1(k, ctx));
 
-// Запускаем сцену выбора персонажа
 k.go("characterSelection");
 
 main();

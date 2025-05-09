@@ -15,15 +15,15 @@ export function makePlayer(k, spriteName = "player") {
     {
       speed: 150,
       isAttacking: false,
-      numJumps: 1, // Количество доступных прыжков
+      numJumps: 1, 
       doubleJump() {
         if (this.numJumps > 0) {
-          this.jump(400); // Сила прыжка
-          this.numJumps -= 1; // Уменьшаем количество доступных прыжков
+          this.jump(400); 
+          this.numJumps -= 1; 
         }
       },
       resetJumps() {
-        this.numJumps = 1; // Сбрасываем количество прыжков при приземлении
+        this.numJumps = 1; 
       },
       setPosition(x, y) {
         this.pos.x = x;
