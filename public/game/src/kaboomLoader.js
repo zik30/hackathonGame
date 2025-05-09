@@ -24,6 +24,7 @@ k.loadSprite("player", "./assets/sprites/u.png", {
   },
 });
 
+
 k.loadSprite("drone", "./assets/sprites/dr0ne.png", {
   sliceX: 6,
   sliceY: 3,

@@ -2,10 +2,10 @@ import { state, statePropsEnum } from "../state/globalStateManager.js";
 import { healthBar } from "../ui/healthBar.js";
 import { makeBlink } from "./entitySharedLogic.js";
 
-export function makePlayer(k) {
+export function makePlayer(k, hero = 'player') {
   return k.make([
     k.pos(),
-    k.sprite("player"),
+    k.sprite(hero),
     k.area({ shape: new k.Rect(k.vec2(0, 18), 12, 12) }),
     k.anchor("center"),
     k.body({ mass: 100, jumpForce: 320 }),

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Space, Table, Tag } from 'antd';
-import styles from './Leader.module.css'
+import styles from './Leader.module.scss'
+import axios from 'axios';
 
 const columns = [
     {
@@ -43,19 +44,45 @@ const players = [
     { name: "Steve", score: 76 },
     { name: "Tina", score: 97 }
 ];
+
   
 
 function Leader() {
+
+
+
+
   return (
-    <div className='wrapper'>
-        <div className='container'>
-            <div className='text'>
-                <h2 className=''>Leader Bord</h2>
-                <p>Посмотри на результаты</p>
+    <div className={styles.wrapper}>
+        <div className={styles.container}>
+            <div className={styles.text}>
+                <h2 className={styles.title}>Leader Bord</h2>
+                <h2 className={styles.p}>Посмотри   на   результаты</h2>
             </div>
-            <div className='table'>
-                <Table columns={columns} dataSource={players.map((player, index) => ({ ...player, id: index + 1, key: index }))} pagination={false} />
-            </div>
+            <table>
+              <thead>
+                <tr>
+                  {
+                    columns.map((column, i) => (
+                      <th key={i} className={styles.tableHeader}>
+                        {column.title}
+                      </th>
+                    ))
+                  }
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  players.map((player, i) => (
+                    <tr key={i} className={styles.tableRow}>
+                      <td>{i + 1}</td>
+                      <td>{player.name}</td>
+                      <td>{player.score}</td>
+                    </tr>
+                  ))
+                }
+              </tbody>
+            </table>
         </div>
     </div>
   )

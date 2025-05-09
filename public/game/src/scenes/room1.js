@@ -16,7 +16,8 @@ import {
 export async function room1(
   k,
   roomData,
-  previousSceneData = { exitName: null }
+  previousSceneData = { exitName: null },
+  hero
 ) {
   setBackgroundColor(k, "#a2aed5");
 
@@ -31,7 +32,7 @@ export async function room1(
 
   setMapColliders(k, map, colliders);
 
-  const player = map.add(makePlayer(k));
+  const player = map.add(makePlayer(k, hero));
 
   setCameraControls(k, player, map, roomData);
 

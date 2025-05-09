@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'EngFont';
+    src: url('../../assets/glyphmesss.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RusFont';
+    src: url('../../assets/FRM3216x16.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.wrapper{
+    background-color: #222122;
+    .container{
+        width: 1200px;
+        margin: 0 auto;
+        padding: 50px 0;
+        .text{
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            .title{
+                font-size: 60px;
+                font-family: 'EngFont', sans-serif;
+                color: #ffe743;
+                padding: 10px;
+                background-color: #222122;
+                margin: 0;
+            }
+            .p{
+                font-size: 20px;
+                font-family: 'RusFont', sans-serif;
+                color: #c6232d;
+            }
+        }
+        table{
+            width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            // background-color: #222122;
+            text-align: center;
+            color: #222122;
+            border-spacing: 0 20px; /* горизонталь 0, вертикаль 20px */
+            border-collapse: separate; 
+            
+            thead{
+                tr{
+                    background-color: #222122;
+                    color: #ffe743;
+                    font-size: 30px;
+                    font-family: sans-serif;
+                    padding: 10px;
+                }
+            }
+            tbody{
+                tr{
+                    font-size: 18px;
+                    font-family: sans-serif;
+                    color: #eeeeee;
+                    margin: 40px 0;
+                    transition: all 0.3s ease;
+                    &:nth-child(even){
+                        background-color: #2d2c2d;
+                    }
+                    &:nth-child(odd){
+                        background-color: #222122;
+                    }
+                    &:hover{
+                        background-color: #d8fa00;
+                        color: #222122;
+                        scale: 1.05;
+                    }
+                }
+                
+            }
+        }
+    }
+}
