@@ -1,0 +1,55 @@
+.container {
+  text-align: center;
+  color: white;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+.characters {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.character {
+  border: 2px solid yellow;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.character img {
+  width: 100px;
+  height: 100px;
+}
+
+.character p {
+  margin-top: 10px;
+}
+
+.character:hover {
+  transform: scale(1.1);
+  border-color: white;
+}
+
+.selected {
+  border-color: red;
+}
+
+.startButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: yellow;
+  color: black;
+  border: 2px solid yellow;
+  cursor: pointer;
+  font-family: 'Press Start 2P', sans-serif;
+  transition: transform 0.2s;
+}
+
+.startButton:hover {
+  transform: scale(1.1);
+  background-color: black;
+  color: yellow;
+}

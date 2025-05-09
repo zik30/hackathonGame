@@ -3,6 +3,7 @@ import { room1 } from "./scenes/room1.js";
 import { room2 } from "./scenes/room2.js";
 import { setBackgroundColor } from "./scenes/roomUtils.js";
 import { makeNotificationBox } from "./ui/notificationBox.js";
+import { characterSelection } from "./scenes/characterSelection.js";
 
 async function main() {
   const room1Data = await (await fetch("./maps/room1.json")).json();
@@ -42,6 +43,10 @@ k.scene("intro", () => {
   });
 });
 
-k.go("intro");
+k.scene("characterSelection", () => characterSelection(k));
+k.scene("room1", (ctx) => room1(k, ctx));
+
+// Запускаем сцену выбора персонажа
+k.go("characterSelection");
 
 main();

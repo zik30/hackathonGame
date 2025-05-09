@@ -23,7 +23,30 @@ k.loadSprite("player", "./assets/sprites/u.png", {
     attack: { from: 24, to: 28, speed: 16 },
   },
 });
-
+k.loadSprite("player2", "./assets/sprites/u2.png", {
+  sliceX: 8,
+  sliceY: 9,
+  anims: {
+    idle: { from: 0, to: 7, loop: true },
+    run: { from: 8, to: 13, loop: true },
+    jump: { from: 51, to: 51, loop: true },
+    fall: { from: 54, to: 54, loop: true },
+    explode: { from: 64, to: 69 },
+    attack: { from: 24, to: 28, speed: 16 },
+  },
+});
+k.loadSprite("player3", "./assets/sprites/u3.png", {
+  sliceX: 8,
+  sliceY: 9,
+  anims: {
+    idle: { from: 0, to: 7, loop: true },
+    run: { from: 8, to: 13, loop: true },
+    jump: { from: 51, to: 51, loop: true },
+    fall: { from: 54, to: 54, loop: true },
+    explode: { from: 64, to: 69 },
+    attack: { from: 24, to: 28, speed: 16 },
+  },
+});
 k.loadSprite("drone", "./assets/sprites/dr0ne.png", {
   sliceX: 6,
   sliceY: 3,
@@ -46,6 +69,51 @@ k.loadSprite("burner", "./assets/sprites/burn3r.png", {
     explode: { from: 25, to: 29 },
   },
 });
+
+k.loadSprite("newCharacter", "./assets/sprites/character_sheet_32x32.png", {
+  sliceX: 5, // Adjust based on the number of horizontal frames
+  sliceY: 4, // Adjust based on the number of vertical frames
+  anims: {
+    idle: { from: 0, to: 3, loop: true },
+    run: { from: 5, to: 9, loop: true },
+    jump: { from: 10, to: 10 },
+    fall: { from: 11, to: 11 },
+    attack: { from: 15, to: 19, speed: 10 },
+  },
+});
+
+// k.loadSprite("character1", "./assets/sprites/u.png", {
+//   sliceX: 6,
+//   sliceY: 4,
+//   anims: {
+//     idle: { from: 0, to: 3, loop: true },
+//     run: { from: 6, to: 11, loop: true },
+//     jump: { from: 12, to: 12 },
+//     attack: { from: 18, to: 23, loop: true },
+//   },
+// });
+
+// k.loadSprite("character2", "./assets/sprites/u2.png", {
+//   sliceX: 6,
+//   sliceY: 4,
+//   anims: {
+//     idle: { from: 0, to: 3, loop: true },
+//     run: { from: 6, to: 11, loop: true },
+//     jump: { from: 12, to: 12 },
+//     attack: { from: 18, to: 23, loop: true },
+//   },
+// });
+
+// k.loadSprite("character3", "./assets/sprites/u3.png", {
+//   sliceX: 6,
+//   sliceY: 4,
+//   anims: {
+//     idle: { from: 0, to: 3, loop: true },
+//     run: { from: 6, to: 11, loop: true },
+//     jump: { from: 12, to: 12 },
+//     attack: { from: 18, to: 23, loop: true },
+//   },
+// });
 
 k.loadSpriteAtlas("./assets/ui.png", {
   healthBar: {
@@ -70,11 +138,11 @@ k.loadSpriteAtlas("./assets/animations.png", {
   },
 });
 
-k.loadSprite("tileset", "./assets/tileset.png", {
-  sliceX: 33,
+k.loadSound("health", "./assets/sounds/health.wav");
+k.loadSound("flamethrower", "./assets/sounds/flamethrower.mp3");
   sliceY: 21,
-});
-
+k.loadSprite("room1", "./maps/room1.png");
+k.loadSprite("room2", "./maps/room2.png");
 k.loadSprite("background", "./assets/background.png", {
   sliceX: 13,
   sliceY: 25,

@@ -16,8 +16,10 @@ import {
 export async function room1(
   k,
   roomData,
-  previousSceneData = { exitName: null }
+  previousSceneData = { selectedCharacter: "player" }
 ) {
+  const { selectedCharacter } = previousSceneData;
+
   setBackgroundColor(k, "#a2aed5");
 
   k.camScale(4);
@@ -31,7 +33,7 @@ export async function room1(
 
   setMapColliders(k, map, colliders);
 
-  const player = map.add(makePlayer(k));
+  const player = map.add(makePlayer(k, selectedCharacter));
 
   setCameraControls(k, player, map, roomData);
 

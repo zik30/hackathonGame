@@ -2,20 +2,29 @@ import { state, statePropsEnum } from "../state/globalStateManager.js";
 import { healthBar } from "../ui/healthBar.js";
 import { makeBlink } from "./entitySharedLogic.js";
 
-export function makePlayer(k) {
+export function makePlayer(k, spriteName = "player") {
   return k.make([
     k.pos(),
-    k.sprite("player"),
+    k.sprite(spriteName, { anim: "idle" }),
     k.area({ shape: new k.Rect(k.vec2(0, 18), 12, 12) }),
     k.anchor("center"),
     k.body({ mass: 100, jumpForce: 320 }),
-    k.doubleJump(state.current().isDoubleJumpUnlocked ? 2 : 1),
     k.opacity(),
     k.health(state.current().playerHp),
     "player",
     {
       speed: 150,
       isAttacking: false,
+      numJumps: 1, // Количество доступных прыжков
+      doubleJump() {
+        if (this.numJumps > 0) {
+          this.jump(400); // Сила прыжка
+          this.numJumps -= 1; // Уменьшаем количество доступных прыжков
+        }
+      },
+      resetJumps() {
+        this.numJumps = 1; // Сбрасываем количество прыжков при приземлении
+      },
       setPosition(x, y) {
         this.pos.x = x;
         this.pos.y = y;
@@ -32,13 +41,13 @@ export function makePlayer(k) {
 
         this.controlHandlers.push(
           k.onKeyPress((key) => {
-            if (key === "x") {
+            if (key === "up") {
               if (this.curAnim() !== "jump") this.play("jump");
               this.doubleJump();
             }
 
             if (
-              key === "z" &&
+              key === "space" &&
               this.curAnim() !== "attack" &&
               this.isGrounded()
             ) {
@@ -128,6 +137,7 @@ export function makePlayer(k) {
           this.play("fall");
         });
         this.onGround(() => {
+          this.resetJumps(); // Сбрасываем прыжки при приземлении
           this.play("idle");
         });
         this.onHeadbutt(() => {
