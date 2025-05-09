@@ -1,0 +1,145 @@
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalHidden body {
+  overflow: hidden;
+}
+
+.modal {
+  background-color: #222122;
+  border-radius: 8px;
+  position: relative;
+  max-height: 500px;
+  max-width: 737px;
+  color: #fff;
+  z-index: 1000;
+  padding: 92px 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95%;
+  box-sizing: border-box;
+  .message{
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+  }
+  .inputAreaItself {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    width: 48px;
+    height: 48px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .container,
+  .mainInputArea,
+  .inputArea,
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .container {
+    gap: 38px;
+  }
+
+  .wrapper {
+    gap: 20px;
+  }
+
+  .label {
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+
+    .required {
+      color: red;
+    }
+  }
+
+  .errorInput {
+    border: 1px solid red !important;
+  }
+
+  .errorMessage {
+    color: #ff4d4f;
+    font-size: 12px;
+  }
+}
+
+.input {
+  background: #d9d9d9;
+  width: 500px;
+  height: 56px;
+  padding: 19px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16.94px;
+  transition: 300ms ease-out;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: #000000;
+  }
+
+  &:focus {
+    border: 1px solid #00a1ba;
+    outline: none;
+  }
+}
+
+.errorInput {
+  border: 1px solid red;
+
+  &::placeholder {
+    color: red;
+  }
+}
+
+
+.button {
+  background-color: #ffe743;
+  width: 300px;
+  color:#222122;
+  border-radius: 7px;
+  border: none;
+  height: 49px;
+  font-size: 25px;
+
+  &:hover{
+    background-color: #d8fa00;
+    cursor: pointer;
+
+  }
+}
+

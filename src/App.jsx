@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Game from "./pages/gamePage/Game";
+import RegistrationModal from "./modules/RegistrationModal/RegistrationModal.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/game" element={<Game />} />
         </Routes>
+        <RegistrationModal/>
       </BrowserRouter>
     </>
   );
