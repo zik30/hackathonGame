@@ -50,8 +50,6 @@ const players = [
 function Leader() {
 
 
-
-
   return (
     <div className={styles.wrapper}>
         <div className={styles.container}>

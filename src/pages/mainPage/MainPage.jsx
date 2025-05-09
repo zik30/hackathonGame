@@ -9,7 +9,7 @@ const MainPage = () => {
         <header>
             <h1>COINHUNTERS</h1>
             <ul>
-                <Link to='/liderBoard'>
+                <Link to='/leader'>
                     <li>leaderBoard</li>
                 </Link>
             </ul>
