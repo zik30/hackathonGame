@@ -149,6 +149,11 @@ export function makePlayer(k, spriteName = "player") {
           healthBar.trigger("update");
         });
 
+        this.on( "getCoin", (amount) =>{
+          state.set(statePropsEnum.coin, state.current().coin + amount);
+          counter.trigger("update"); 
+        })
+
         this.on("hurt", () => {
           makeBlink(k, this);
           if (this.hp() > 0) {
