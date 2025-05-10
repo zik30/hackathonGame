@@ -164,7 +164,7 @@ export function makePlayer(k, spriteName = "player") {
 
         this.onAnimEnd((anim) => {
           if (anim === "explode") {
-            k.go("room1");
+            window.location.href = "/leaderboard";
           }
         });
       },

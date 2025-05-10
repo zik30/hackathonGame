@@ -39,12 +39,32 @@ k.scene("intro", () => {
     // makes audio will be enabled before the game starts
     const context = new AudioContext();
     context.resume();
-    k.go("room1", { exitName: null });
+    k.go("room1", { selectedCharacter: "player", exitName: null });
   });
 });
 
 k.scene("characterSelection", () => characterSelection(k));
 k.scene("room1", (ctx) => room1(k, ctx));
+k.scene("room2", (ctx) => room2(k, ctx));
+
+k.scene("leaderBoard", () => {
+  setBackgroundColor(k, "#000000");
+  k.add([
+    k.text("Game Over\nLeaderboard", { size: 32, align: "center" }),
+    k.pos(k.width() / 2, k.height() / 2 - 50),
+    k.anchor("center"),
+  ]);
+
+  k.add([
+    k.text("Press Enter to Restart", { size: 16, align: "center" }),
+    k.pos(k.width() / 2, k.height() / 2 + 50),
+    k.anchor("center"),
+  ]);
+
+  k.onKeyPress("enter", () => {
+    k.go("characterSelection");
+  });
+});
 
 k.go("characterSelection");
 

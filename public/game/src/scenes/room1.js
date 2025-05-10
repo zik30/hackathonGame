@@ -20,6 +20,8 @@ export async function room1(
 ) {
   const { selectedCharacter } = previousSceneData;
 
+  console.log("Selected Character in Room 1:", selectedCharacter);
+
   setBackgroundColor(k, "#a2aed5");
 
   k.camScale(4);
@@ -97,7 +99,7 @@ export async function room1(
   setCameraZones(k, map, cameras);
 
   const exits = roomLayers[7].objects;
-  setExitZones(k, map, exits, "room2");
+  setExitZones(k, map, exits, "room2", { selectedCharacter });
 
   healthBar.setEvents();
   healthBar.trigger("update");

@@ -35,7 +35,7 @@ k.loadSprite("player2", "./assets/sprites/u2.png", {
     attack: { from: 24, to: 28, speed: 16 },
   },
 });
-k.loadSprite("player3", "./assets/sprites/u3.png", {
+k.loadSprite("player3", "./assets/sprites/u4.png", {
   sliceX: 8,
   sliceY: 9,
   anims: {
