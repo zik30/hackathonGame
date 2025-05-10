@@ -3,7 +3,7 @@ import Game from "./pages/gamePage/Game";
 import MainPage from "./pages/mainPage/MainPage";
 import './App.css'
 import Inctruction from "./pages/instruction/Inctruction";
-import LeaderBoard from "./components/LeaderBoard";
+import Leader from "./pages/leaderPage/Leader";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage/>} />
           <Route path="/game" element={<Game />} />
+          <Route path="/leader" element={<Leader />} />
           <Route path="/instruction" element={<Inctruction/>}/>
-          <Route path="/leaderboard" element={<LeaderBoard />} />
         </Routes>
       </BrowserRouter>
     </div>

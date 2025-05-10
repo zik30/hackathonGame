@@ -3,6 +3,7 @@ export const statePropsEnum = {
   isDoubleJumpUnlocked: "isDoubleJumpUnlocked",
   playerInBossFight: "playerInBossFight",
   isBossDefeated: "isBossDefeated",
+  coin: "coin",
 };
 
 function initStateManager() {
@@ -12,6 +13,7 @@ function initStateManager() {
     isDoubleJumpUnlocked: false,
     playerInBossFight: false,
     isBossDefeated: false,
+    coin: 0,
   };
 
   return {

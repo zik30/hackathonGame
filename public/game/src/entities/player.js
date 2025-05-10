@@ -137,7 +137,7 @@ export function makePlayer(k, spriteName = "player") {
           this.play("fall");
         });
         this.onGround(() => {
-          this.resetJumps(); // Сбрасываем прыжки при приземлении
+          this.resetJumps();
           this.play("idle");
         });
         this.onHeadbutt(() => {
@@ -148,6 +148,11 @@ export function makePlayer(k, spriteName = "player") {
           state.set(statePropsEnum.playerHp, this.hp());
           healthBar.trigger("update");
         });
+
+        this.on( "getCoin", (amount) =>{
+          state.set(statePropsEnum.coin, state.current().coin + amount);
+          counter.trigger("update"); 
+        })
 
         this.on("hurt", () => {
           makeBlink(k, this);
@@ -164,7 +169,7 @@ export function makePlayer(k, spriteName = "player") {
 
         this.onAnimEnd((anim) => {
           if (anim === "explode") {
-            window.location.href = "/leaderboard";
+            window.location.href = "/leader";
           }
         });
       },

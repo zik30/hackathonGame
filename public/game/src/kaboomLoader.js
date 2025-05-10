@@ -23,6 +23,7 @@ k.loadSprite("player", "./assets/sprites/u.png", {
     attack: { from: 24, to: 28, speed: 16 },
   },
 });
+
 k.loadSprite("player2", "./assets/sprites/u2.png", {
   sliceX: 8,
   sliceY: 9,
@@ -35,7 +36,8 @@ k.loadSprite("player2", "./assets/sprites/u2.png", {
     attack: { from: 24, to: 28, speed: 16 },
   },
 });
-k.loadSprite("player3", "./assets/sprites/u4.png", {
+
+k.loadSprite("player3", "./assets/sprites/u3.png", {
   sliceX: 8,
   sliceY: 9,
   anims: {
@@ -47,6 +49,7 @@ k.loadSprite("player3", "./assets/sprites/u4.png", {
     attack: { from: 24, to: 28, speed: 16 },
   },
 });
+
 k.loadSprite("drone", "./assets/sprites/dr0ne.png", {
   sliceX: 6,
   sliceY: 3,
@@ -94,6 +97,34 @@ k.loadSpriteAtlas("./assets/animations.png", {
   },
 });
 
+k.loadSpriteAtlas("./assets/animations2.png", {
+  coin: {
+    x: 125,
+    y: 145,
+    width: 134,
+    height: 16,
+    sliceX: 8,
+    anims: {
+      default: { from: 0, to: 3, loop: true, speed: 7 },
+    },
+  },
+});
+
+k.loadSpriteAtlas("./assets/animations2.png", {
+  counter: {
+    x: 125,
+    y: 145,
+    width: 134,
+    height: 16,
+    sliceX: 8,
+    anims: {
+      default: { from: 0, to: 3, loop: true, speed: 7 },
+    },
+  },
+});
+
+k.loadSpriteAtlas("./assets/coins/coin350.png")
+
 k.loadSound("health", "./assets/sounds/health.wav");
 k.loadSound("flamethrower", "./assets/sounds/flamethrower.mp3");
   sliceY: 21,
@@ -105,8 +136,8 @@ k.loadSprite("background", "./assets/background.png", {
 });
 
 k.loadSound("notify", "./assets/sounds/notify.mp3");
-k.loadSound("boom", "./assets/sounds/boom.wav");
-k.loadSound("health", "./assets/sounds/health.wav");
+k.loadSound("boom", "./assets/sounds/Ahtung.m4a");
+k.loadSound("health", "./assets/sounds/Aliluya.m4a");
 k.loadSound("flamethrower", "./assets/sounds/flamethrower.mp3");
 
 k.loadSprite("room1", "./maps/room1.png");
