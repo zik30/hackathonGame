@@ -137,7 +137,7 @@ export function makePlayer(k, spriteName = "player") {
           this.play("fall");
         });
         this.onGround(() => {
-          this.resetJumps(); // Сбрасываем прыжки при приземлении
+          this.resetJumps();
           this.play("idle");
         });
         this.onHeadbutt(() => {
@@ -169,7 +169,7 @@ export function makePlayer(k, spriteName = "player") {
 
         this.onAnimEnd((anim) => {
           if (anim === "explode") {
-            k.go("room1");
+            window.location.href = "/leader";
           }
         });
       },

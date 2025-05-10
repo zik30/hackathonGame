@@ -170,39 +170,18 @@ export function setCameraZones(k, map, cameras) {
   }
 }
 
-export function setExitZones(k, map, exits, destinationName) {
+export function setExitZones(k, map, exits, nextRoom, additionalData = {}) {
   for (const exit of exits) {
-    const exitZone = map.add([
+    const zone = map.add([
+      k.rect(exit.width, exit.height),
       k.pos(exit.x, exit.y),
-      k.area({
-        shape: new k.Rect(k.vec2(0), exit.width, exit.height),
-        collisionIgnore: ["collider"],
-      }),
-      k.body({ isStatic: true }),
-      exit.name,
+      k.area(),
+      "exit",
+      { exitName: exit.name },
     ]);
 
-    exitZone.onCollide("player", async () => {
-      const background = k.add([
-        k.pos(-k.width(), 0),
-        k.rect(k.width(), k.height()),
-        k.color("#20214a"),
-      ]);
-
-      await k.tween(
-        background.pos.x,
-        0,
-        0.3,
-        (val) => (background.pos.x = val),
-        k.easings.linear
-      );
-
-      if (exit.name === "final-exit") {
-        k.go("final-exit");
-        return;
-      }
-
-      k.go(destinationName, { exitName: exit.name });
+    zone.onCollide("player", () => {
+      k.go(nextRoom, { exitName: exit.name, ...additionalData });
     });
   }
 }
