@@ -4,7 +4,7 @@
 }
 .bgc {
     height: 100vh;
-    background-image: url('./images//Vite\ +\ React\ -\ Google\ Chrome\ 2025-05-09\ 11-35-25.mp4'); 
+    background-image: url('./images//Vite\ +\ React\ -\ Google\ Chrome\ 2025-05-09\ 11-35-25.mp4');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -14,13 +14,7 @@
     color: white;
     text-align: center;
     animation: flicker 1.5s infinite;
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 0;
-    
-    }
+
     main {
         display: flex;
         justify-content: center;

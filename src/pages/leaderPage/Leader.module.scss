@@ -1,0 +1,73 @@
+
+
+.wrapper{
+    background-color: #111111;
+    .container{
+        width: 1200px;
+        margin: 0 auto;
+        padding: 50px 0;
+        .text{
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            .title{
+                font-size: 60px;
+                font-family: 'Press Start 2P', sans-serif;
+                color: #ffe743;
+                padding: 10px;
+                background-color: #222122;
+                margin: 0;
+            }
+            .p{
+                font-size: 20px;
+                font-family: 'Press Start 2P', sans-serif;
+                color: #c6232d;
+            }
+        }
+        table{
+            width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            // background-color: #222122;
+            text-align: center;
+            color: #222122;
+            border-spacing: 0 20px; /* горизонталь 0, вертикаль 20px */
+            border-collapse: separate; 
+            
+            thead{
+                div{
+                    padding: 10px;
+                    background-color: #222122;
+                    width: 580px;
+                }
+                tr{
+                    width: 580px;
+                    color: #ffe743;
+                    font-size: 20px;
+                    font-family: 'Press Start 2P', sans-serif;
+                }
+            }
+            tbody{
+                tr{
+                    font-size: 18px;
+                    font-family: sans-serif;
+                    color: #eeeeee;
+                    margin: 40px 0;
+                    transition: all 0.3s ease;
+                    &:nth-child(even){
+                        background-color: #2d2c2d;
+                    }
+                    &:nth-child(odd){
+                        background-color: #222122;
+                    }
+                    &:hover{
+                        background-color: #d8fa00;
+                        color: #222122;
+                        scale: 1.05;
+                    }
+                }
+                
+            }
+        }
+    }
+}

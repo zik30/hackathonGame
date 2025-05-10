@@ -13,7 +13,22 @@ html, body {
     background-color: #eee;
     height: 100vh;
 } */
+<<<<<<< HEAD
 
+=======
+.container {
+    width: 1168px;
+    margin: 0 auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    height: 60px;
+
+}
+>>>>>>> a2db16243dcb8677bedf390e303d700834a4b1b8
 *{
     margin: 0;
     padding: 0;

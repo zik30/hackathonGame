@@ -3,6 +3,7 @@ import { makeDrone } from "../entities/enemyDrone.js";
 import { makeCartridge } from "../entities/healthCartridge.js";
 import { makePlayer } from "../entities/player.js";
 import { state } from "../state/globalStateManager.js";
+import { makeCoin } from "../entities/coin.js";
 import { healthBar } from "../ui/healthBar.js";
 
 import {
@@ -12,12 +13,17 @@ import {
   setCameraZones,
   setExitZones,
 } from "./roomUtils.js";
+import { counter } from "../ui/counter.js";
 
 export async function room1(
   k,
   roomData,
-  previousSceneData = { exitName: null }
+  previousSceneData = { selectedCharacter: "player" }
 ) {
+  const { selectedCharacter } = previousSceneData;
+
+  console.log("Selected Character in Room 1:", selectedCharacter);
+
   setBackgroundColor(k, "#a2aed5");
 
   k.camScale(4);
@@ -31,7 +37,7 @@ export async function room1(
 
   setMapColliders(k, map, colliders);
 
-  const player = map.add(makePlayer(k));
+  const player = map.add(makePlayer(k, selectedCharacter));
 
   setCameraControls(k, player, map, roomData);
 
@@ -88,6 +94,12 @@ export async function room1(
     if (position.type === "cartridge") {
       map.add(makeCartridge(k, k.vec2(position.x, position.y)));
     }
+
+    if (position.type === "coin") {
+      map.add(makeCoin(k, k.vec2(position.x, position.y)));
+    }
+
+    
   }
 
   const cameras = roomLayers[6].objects;
@@ -95,9 +107,13 @@ export async function room1(
   setCameraZones(k, map, cameras);
 
   const exits = roomLayers[7].objects;
-  setExitZones(k, map, exits, "room2");
+  setExitZones(k, map, exits, "room2", { selectedCharacter });
 
   healthBar.setEvents();
   healthBar.trigger("update");
   k.add(healthBar);
+
+  counter.setEvents();
+  counter.trigger("update");
+  k.add(counter);
 }
