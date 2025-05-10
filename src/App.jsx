@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Game from "./pages/gamePage/Game";
+import Leader from "./pages/leaderPage/Leader";
 import MainPage from "./pages/mainPage/MainPage";
 import './App.css'
 import Inctruction from "./pages/instruction/Inctruction";
-import Leader from "./pages/leaderPage/Leader";
+
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
           <Route path="/" element={<MainPage/>} />
           <Route path="/game" element={<Game />} />
           <Route path="/leader" element={<Leader />} />
+
           <Route path="/instruction" element={<Inctruction/>}/>
         </Routes>
+
       </BrowserRouter>
     </div>
   );

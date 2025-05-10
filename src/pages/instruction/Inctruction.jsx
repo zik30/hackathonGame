@@ -9,6 +9,7 @@ const Instruction = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+
   return (
     <div>
       <button onClick={toggleModal} className={styles.openButton}>
