@@ -18,7 +18,7 @@ export function makePlayer(k, spriteName = "player") {
       numJumps: 1, 
       doubleJump() {
         if (this.numJumps > 0) {
-          this.jump(400); 
+          this.jump(500); 
           this.numJumps -= 1; 
         }
       },
