@@ -10,7 +10,7 @@ export function makeCoin(k, pos) {
     ]);
 
     coin.onCollide( "player", (player) => {
-        k.play( "health", {volume: 0.5} );
+        k.play( "health", {volume: 6.5} );
         state.set(statePropsEnum.coin, state.current().coin + 250);
         console.log("coin", state.current().coin);
         

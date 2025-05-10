@@ -136,8 +136,8 @@ k.loadSprite("background", "./assets/background.png", {
 });
 
 k.loadSound("notify", "./assets/sounds/notify.mp3");
-k.loadSound("boom", "./assets/sounds/boom.wav");
-k.loadSound("health", "./assets/sounds/health.wav");
+k.loadSound("boom", "./assets/sounds/Ahtung.m4a");
+k.loadSound("health", "./assets/sounds/Aliluya.m4a");
 k.loadSound("flamethrower", "./assets/sounds/flamethrower.mp3");
 
 k.loadSprite("room1", "./maps/room1.png");
